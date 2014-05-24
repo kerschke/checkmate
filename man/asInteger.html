@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Convert an argument to an integer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for asInteger {checkmate}"><tr><td>asInteger {checkmate}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Convert an argument to an integer</h2>
+
+<h3>Description</h3>
+
+<p>Convertible are (a) atomic vectors with all elements <code>NA</code>
+and (b) double vectors with all elements being within <code>tol</code>
+range of an integer.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+asInteger(x, ..., tol = .Machine$double.eps^0.5, .var.name)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>[ANY]<br>
+Object to convert.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>[ANY]<br>
+Additional arguments passed to <code><a href="checkInteger.html">checkInteger</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>tol</code></td>
+<td>
+<p>[<code>double(1)</code>]<br>
+Numerical tolerance used to check if a double or complex can be converted.
+Default is <code>sqrt(.Machine$double.eps)</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>.var.name</code></td>
+<td>
+<p>[character(1)]<br>
+Name for <code>x</code>. Defaults to a heuristic to determine
+the name using <code><a href="../../base/html/deparse.html">deparse</a></code> and <code><a href="../../base/html/substitute.html">substitute</a></code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Converted <code>x</code>.
+</p>
+
+<hr><div align="center">[Package <em>checkmate</em> version 0.9 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Check for existence and access rights of directories</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head><body>
+
+<table width="100%" summary="page for checkDirectory {checkmate}"><tr><td>checkDirectory {checkmate}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Check for existence and access rights of directories</h2>
+
+<h3>Description</h3>
+
+<p>Check for existence and access rights of directories
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+checkDirectory(x, access = "")
+
+assertDirectory(x, access = "", .var.name)
+
+testDirectory(x, access = "", .var.name)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>[ANY]<br>
+Object to check.</p>
+</td></tr>
+<tr valign="top"><td><code>.var.name</code></td>
+<td>
+<p>[character(1)]<br>
+Name for <code>x</code>. Defaults to a heuristic to determine
+the name using <code><a href="../../base/html/deparse.html">deparse</a></code> and <code><a href="../../base/html/substitute.html">substitute</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>access</code></td>
+<td>
+<p>[<code>character</code>]<br>
+Single string with characters &lsquo;r&rsquo;, &lsquo;w&rsquo; and &lsquo;x&rsquo; to
+force a check for read, write or execute access rights.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Depending on the function prefix:
+If the check is successfull, all functions return <code>TRUE</code>.
+If the check is not successfull, <code>assertDirectory</code> throws an error message,
+<code>testDirectory</code> returns <code>FALSE</code> and <code>checkDirectory</code> returns
+a string with the error message.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other filesystem: <code><a href="checkAccess.html">assertAccess</a></code>,
+<code><a href="checkAccess.html">checkAccess</a></code>, <code><a href="checkAccess.html">testAccess</a></code>;
+<code><a href="checkFile.html">assertFile</a></code>, <code><a href="checkFile.html">checkFile</a></code>,
+<code><a href="checkFile.html">testFile</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class="r">
+# Is R&#39;s home directory readable?
+ testDirectory(R.home(), &quot;r&quot;)
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="r">
+ # Is R&#39;s home directory writable?
+ testDirectory(R.home(), &quot;w&quot;)
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="r">
+</code></pre>
+
+
+<hr><div align="center">[Package <em>checkmate</em> version 0.9 <a href="00Index.html">Index</a>]</div>
+</body></html>
