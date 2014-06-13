@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>R: Check if an argument is a single numeric</title>
+<html><head><title>R: Check if an argument is a single integer</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="R.css">
 
@@ -9,24 +9,24 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head><body>
 
-<table width="100%" summary="page for checkNumber {checkmate}"><tr><td>checkNumber {checkmate}</td><td align="right">R Documentation</td></tr></table>
+<table width="100%" summary="page for checkInt {checkmate}"><tr><td>checkInt {checkmate}</td><td align="right">R Documentation</td></tr></table>
 
-<h2>Check if an argument is a single numeric</h2>
+<h2>Check if an argument is a single integer</h2>
 
 <h3>Description</h3>
 
-<p>Check if an argument is a single numeric
+<p>Check if an argument is a single integer
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-checkNumber(x, na.ok = FALSE, lower = -Inf, upper = Inf)
+checkInt(x, na.ok = FALSE, lower = -Inf, upper = Inf)
 
-assertNumber(x, na.ok = FALSE, lower = -Inf, upper = Inf, .var.name)
+assertInt(x, na.ok = FALSE, lower = -Inf, upper = Inf, .var.name)
 
-testNumber(x, na.ok = FALSE, lower = -Inf, upper = Inf)
+testInt(x, na.ok = FALSE, lower = -Inf, upper = Inf)
 </pre>
 
 
@@ -74,8 +74,8 @@ and <code>NA_character_</code>.
 
 <p>Depending on the function prefix:
 If the check is successfull, all functions return <code>TRUE</code>.
-If the check is not successfull, <code>assertNumber</code> throws an error message,
-<code>testNumber</code> returns <code>FALSE</code> and <code>checkNumber</code> returns
+If the check is not successfull, <code>assertInt</code> throws an error message,
+<code>testInt</code> returns <code>FALSE</code> and <code>checkInt</code> returns
 a string with the error message.
 </p>
 
@@ -85,8 +85,8 @@ a string with the error message.
 <p>Other scalars: <code><a href="checkCount.html">assertCount</a></code>,
 <code><a href="checkCount.html">checkCount</a></code>, <code><a href="checkCount.html">testCount</a></code>;
 <code><a href="checkFlag.html">assertFlag</a></code>, <code><a href="checkFlag.html">checkFlag</a></code>,
-<code><a href="checkFlag.html">testFlag</a></code>; <code><a href="checkInt.html">assertInt</a></code>,
-<code><a href="checkInt.html">checkInt</a></code>, <code><a href="checkInt.html">testInt</a></code>;
+<code><a href="checkFlag.html">testFlag</a></code>; <code><a href="checkNumber.html">assertNumber</a></code>,
+<code><a href="checkNumber.html">checkNumber</a></code>, <code><a href="checkNumber.html">testNumber</a></code>;
 <code><a href="checkString.html">assertString</a></code>, <code><a href="checkString.html">checkString</a></code>,
 <code><a href="checkString.html">testString</a></code>
 </p>
@@ -94,13 +94,13 @@ a string with the error message.
 
 <h3>Examples</h3>
 
-<pre><code class="r">testNumber(1)
+<pre><code class="r">testInt(1)
 </code></pre>
 
 <pre><code>## [1] TRUE
 </code></pre>
 
-<pre><code class="r"> testNumber(1:2)
+<pre><code class="r"> testInt(-1, lower = 0)
 </code></pre>
 
 <pre><code>## [1] FALSE

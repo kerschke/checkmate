@@ -22,11 +22,17 @@
 <h3>Usage</h3>
 
 <pre>
-checkNumeric(x, lower = -Inf, upper = Inf, ...)
+checkNumeric(x, lower = -Inf, upper = Inf, any.missing = TRUE,
+  all.missing = TRUE, len = NULL, min.len = NULL, max.len = NULL,
+  unique = FALSE, names = NULL)
 
-assertNumeric(x, lower = -Inf, upper = Inf, ..., .var.name)
+assertNumeric(x, lower = -Inf, upper = Inf, any.missing = TRUE,
+  all.missing = TRUE, len = NULL, min.len = NULL, max.len = NULL,
+  unique = FALSE, names = NULL, .var.name)
 
-testNumeric(x, lower = -Inf, upper = Inf, ...)
+testNumeric(x, lower = -Inf, upper = Inf, any.missing = TRUE,
+  all.missing = TRUE, len = NULL, min.len = NULL, max.len = NULL,
+  unique = FALSE, names = NULL)
 </pre>
 
 
@@ -54,10 +60,41 @@ Lower value all elements of <code>x</code> must be greater than.</p>
 <p>[<code>numeric(1)</code>]<br>
 Upper value all elements of <code>x</code> must be lower than.</p>
 </td></tr>
-<tr valign="top"><td><code>...</code></td>
+<tr valign="top"><td><code>any.missing</code></td>
 <td>
-<p>[ANY]<br>
-Additional parameters used in a call of <code><a href="checkVector.html">checkVector</a></code>.</p>
+<p>[<code>logical(1)</code>]<br>
+Are vectors with missing values allowed? Default is <code>TRUE</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>all.missing</code></td>
+<td>
+<p>[<code>logical(1)</code>]<br>
+Are vectors with only missing values allowed? Default is <code>TRUE</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>len</code></td>
+<td>
+<p>[<code>integer(1)</code>]<br>
+Exact expected length of <code>x</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>min.len</code></td>
+<td>
+<p>[<code>integer(1)</code>]<br>
+Minimal length of <code>x</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>max.len</code></td>
+<td>
+<p>[<code>integer(1)</code>]<br>
+Maximal length of <code>x</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>unique</code></td>
+<td>
+<p>[<code>logical(1)</code>]<br>
+Must all values be unique? Default is <code>FALSE</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>names</code></td>
+<td>
+<p>[<code>character(1)</code>]<br>
+Check for names. See <code><a href="checkNamed.html">checkNamed</a></code> for possible values.
+Default is &ldquo;any&rdquo; which performs no check at all.</p>
 </td></tr>
 </table>
 
@@ -82,7 +119,9 @@ a string with the error message.
 
 <h3>See Also</h3>
 
-<p>Other basetypes: <code><a href="checkCharacter.html">assertCharacter</a></code>,
+<p>Other basetypes: <code><a href="checkArray.html">assertArray</a></code>,
+<code><a href="checkArray.html">checkArray</a></code>, <code><a href="checkArray.html">testArray</a></code>;
+<code><a href="checkCharacter.html">assertCharacter</a></code>,
 <code><a href="checkCharacter.html">checkCharacter</a></code>,
 <code><a href="checkCharacter.html">testCharacter</a></code>; <code><a href="checkComplex.html">assertComplex</a></code>,
 <code><a href="checkComplex.html">checkComplex</a></code>, <code><a href="checkComplex.html">testComplex</a></code>;
@@ -111,8 +150,7 @@ a string with the error message.
 
 <h3>Examples</h3>
 
-<pre><code class="r">
-testNumeric(1)
+<pre><code class="r">testNumeric(1)
 </code></pre>
 
 <pre><code>## [1] TRUE
@@ -122,9 +160,6 @@ testNumeric(1)
 </code></pre>
 
 <pre><code>## [1] TRUE
-</code></pre>
-
-<pre><code class="r">
 </code></pre>
 
 

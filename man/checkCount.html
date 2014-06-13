@@ -22,11 +22,11 @@
 <h3>Usage</h3>
 
 <pre>
-checkCount(x, na.ok = FALSE)
+checkCount(x, na.ok = FALSE, positive = FALSE)
 
-assertCount(x, na.ok = FALSE, .var.name)
+assertCount(x, na.ok = FALSE, positive = FALSE, .var.name)
 
-testCount(x, na.ok = FALSE)
+testCount(x, na.ok = FALSE, positive = FALSE)
 </pre>
 
 
@@ -49,6 +49,12 @@ the name using <code><a href="../../base/html/deparse.html">deparse</a></code> a
 <p>[<code>logical(1)</code>]<br>
 Are missing values allowed? Default is <code>FALSE</code>.</p>
 </td></tr>
+<tr valign="top"><td><code>positive</code></td>
+<td>
+<p>[<code>logical(1)</code>]<br>
+Must <code>x</code> be positive (&gt;= 1)?
+Default is <code>FALSE</code>.</p>
+</td></tr>
 </table>
 
 
@@ -70,10 +76,21 @@ a string with the error message.
 </p>
 
 
+<h3>See Also</h3>
+
+<p>Other scalars: <code><a href="checkFlag.html">assertFlag</a></code>,
+<code><a href="checkFlag.html">checkFlag</a></code>, <code><a href="checkFlag.html">testFlag</a></code>;
+<code><a href="checkInt.html">assertInt</a></code>, <code><a href="checkInt.html">checkInt</a></code>,
+<code><a href="checkInt.html">testInt</a></code>; <code><a href="checkNumber.html">assertNumber</a></code>,
+<code><a href="checkNumber.html">checkNumber</a></code>, <code><a href="checkNumber.html">testNumber</a></code>;
+<code><a href="checkString.html">assertString</a></code>, <code><a href="checkString.html">checkString</a></code>,
+<code><a href="checkString.html">testString</a></code>
+</p>
+
+
 <h3>Examples</h3>
 
-<pre><code class="r">
-testCount(1)
+<pre><code class="r">testCount(1)
 </code></pre>
 
 <pre><code>## [1] TRUE
@@ -83,15 +100,6 @@ testCount(1)
 </code></pre>
 
 <pre><code>## [1] FALSE
-</code></pre>
-
-<pre><code class="r"> testCount(Inf)
-</code></pre>
-
-<pre><code>## [1] FALSE
-</code></pre>
-
-<pre><code class="r">
 </code></pre>
 
 

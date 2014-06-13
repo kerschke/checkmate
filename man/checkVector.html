@@ -23,14 +23,14 @@
 
 <pre>
 checkVector(x, any.missing = TRUE, all.missing = TRUE, len = NULL,
-  min.len = NULL, max.len = NULL, unique = FALSE, names = "any")
+  min.len = NULL, max.len = NULL, unique = FALSE, names = NULL)
 
 assertVector(x, any.missing = TRUE, all.missing = TRUE, len = NULL,
-  min.len = NULL, max.len = NULL, unique = FALSE, names = "any",
+  min.len = NULL, max.len = NULL, unique = FALSE, names = NULL,
   .var.name)
 
 testVector(x, any.missing = TRUE, all.missing = TRUE, len = NULL,
-  min.len = NULL, max.len = NULL, unique = FALSE, names = "any")
+  min.len = NULL, max.len = NULL, unique = FALSE, names = NULL)
 </pre>
 
 
@@ -99,7 +99,9 @@ a string with the error message.
 
 <h3>See Also</h3>
 
-<p>Other basetypes: <code><a href="checkCharacter.html">assertCharacter</a></code>,
+<p>Other basetypes: <code><a href="checkArray.html">assertArray</a></code>,
+<code><a href="checkArray.html">checkArray</a></code>, <code><a href="checkArray.html">testArray</a></code>;
+<code><a href="checkCharacter.html">assertCharacter</a></code>,
 <code><a href="checkCharacter.html">checkCharacter</a></code>,
 <code><a href="checkCharacter.html">testCharacter</a></code>; <code><a href="checkComplex.html">assertComplex</a></code>,
 <code><a href="checkComplex.html">checkComplex</a></code>, <code><a href="checkComplex.html">testComplex</a></code>;
@@ -128,14 +130,10 @@ a string with the error message.
 
 <h3>Examples</h3>
 
-<pre><code class="r">
-testVector(letters, min.len = 1L, any.missing = FALSE)
+<pre><code class="r">testVector(letters, min.len = 1L, any.missing = FALSE)
 </code></pre>
 
 <pre><code>## [1] TRUE
-</code></pre>
-
-<pre><code class="r">
 </code></pre>
 
 

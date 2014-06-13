@@ -70,8 +70,7 @@ a string with the error message.
 
 <h3>Examples</h3>
 
-<pre><code class="r">
-# Create an object with classes &quot;foo&quot; and &quot;bar&quot;
+<pre><code class="r"># Create an object with classes &quot;foo&quot; and &quot;bar&quot;
  x = 1
  class(x) = c(&quot;foo&quot;, &quot;bar&quot;)
 
@@ -82,23 +81,18 @@ a string with the error message.
 <pre><code>## [1] TRUE
 </code></pre>
 
-<pre><code class="r">
- # is x of class &quot;foo&quot; and &quot;bar&quot;?
+<pre><code class="r"> # is x of class &quot;foo&quot; and &quot;bar&quot;?
  testClass(x, c(&quot;foo&quot;, &quot;bar&quot;))
 </code></pre>
 
 <pre><code>## [1] TRUE
 </code></pre>
 
-<pre><code class="r">
- # is x most specialized as &quot;bar&quot;?
+<pre><code class="r"> # is x most specialized as &quot;bar&quot;?
  testClass(x, &quot;bar&quot;, ordered = TRUE)
 </code></pre>
 
 <pre><code>## [1] FALSE
-</code></pre>
-
-<pre><code class="r">
 </code></pre>
 
 

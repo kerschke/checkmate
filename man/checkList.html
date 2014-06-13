@@ -22,11 +22,17 @@
 <h3>Usage</h3>
 
 <pre>
-checkList(x, types = character(0L), ...)
+checkList(x, types = character(0L), any.missing = TRUE,
+  all.missing = TRUE, len = NULL, min.len = NULL, max.len = NULL,
+  unique = FALSE, names = NULL)
 
-assertList(x, types = character(0L), ..., .var.name)
+assertList(x, types = character(0L), any.missing = TRUE,
+  all.missing = TRUE, len = NULL, min.len = NULL, max.len = NULL,
+  unique = FALSE, names = NULL, .var.name)
 
-testList(x, types = character(0L), ...)
+testList(x, types = character(0L), any.missing = TRUE, all.missing = TRUE,
+  len = NULL, min.len = NULL, max.len = NULL, unique = FALSE,
+  names = NULL)
 </pre>
 
 
@@ -56,6 +62,42 @@ Character vector of class names. Each list element must inherit
 from at least one of the provided types.
 Defaults to <code>character(0)</code> (no check).</p>
 </td></tr>
+<tr valign="top"><td><code>any.missing</code></td>
+<td>
+<p>[<code>logical(1)</code>]<br>
+Are vectors with missing values allowed? Default is <code>TRUE</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>all.missing</code></td>
+<td>
+<p>[<code>logical(1)</code>]<br>
+Are vectors with only missing values allowed? Default is <code>TRUE</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>len</code></td>
+<td>
+<p>[<code>integer(1)</code>]<br>
+Exact expected length of <code>x</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>min.len</code></td>
+<td>
+<p>[<code>integer(1)</code>]<br>
+Minimal length of <code>x</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>max.len</code></td>
+<td>
+<p>[<code>integer(1)</code>]<br>
+Maximal length of <code>x</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>unique</code></td>
+<td>
+<p>[<code>logical(1)</code>]<br>
+Must all values be unique? Default is <code>FALSE</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>names</code></td>
+<td>
+<p>[<code>character(1)</code>]<br>
+Check for names. See <code><a href="checkNamed.html">checkNamed</a></code> for possible values.
+Default is &ldquo;any&rdquo; which performs no check at all.</p>
+</td></tr>
 </table>
 
 
@@ -71,7 +113,9 @@ a string with the error message.
 
 <h3>See Also</h3>
 
-<p>Other basetypes: <code><a href="checkCharacter.html">assertCharacter</a></code>,
+<p>Other basetypes: <code><a href="checkArray.html">assertArray</a></code>,
+<code><a href="checkArray.html">checkArray</a></code>, <code><a href="checkArray.html">testArray</a></code>;
+<code><a href="checkCharacter.html">assertCharacter</a></code>,
 <code><a href="checkCharacter.html">checkCharacter</a></code>,
 <code><a href="checkCharacter.html">testCharacter</a></code>; <code><a href="checkComplex.html">assertComplex</a></code>,
 <code><a href="checkComplex.html">checkComplex</a></code>, <code><a href="checkComplex.html">testComplex</a></code>;
@@ -100,8 +144,7 @@ a string with the error message.
 
 <h3>Examples</h3>
 
-<pre><code class="r">
-testList(list())
+<pre><code class="r">testList(list())
 </code></pre>
 
 <pre><code>## [1] TRUE
@@ -111,9 +154,6 @@ testList(list())
 </code></pre>
 
 <pre><code>## [1] TRUE
-</code></pre>
-
-<pre><code class="r">
 </code></pre>
 
 

@@ -25,7 +25,7 @@ frequent argument checks by typing just a few letters.
 <pre>
 qassert(x, rules, .var.name)
 
-qcheck(x, rules)
+qtest(x, rules)
 </pre>
 
 
@@ -56,7 +56,7 @@ the name of <code>x</code> will be retrieved via <code><a href="../../base/html/
 <p><code>qassert</code> throws an <code>R</code> exception if object <code>x</code> does
 not comply to at least one of the <code>rules</code> and returns <code>TRUE</code>
 otherwise.
-<code>qcheck</code> behaves the same way but returns <code>FALSE</code> if none of the
+<code>qtest</code> behaves the same way but returns <code>FALSE</code> if none of the
 <code>rules</code> comply.
 </p>
 <p>The rule is specified in up to three parts.
@@ -202,69 +202,60 @@ The implementation is mostly written in <code>C</code> to minimize the overhead.
 
 <h3>See Also</h3>
 
-<p><code><a href="qassertr.html">qcheckr</a></code> and <code><a href="qassertr.html">qassertr</a></code> for efficient checks
+<p><code><a href="qassertr.html">qtestr</a></code> and <code><a href="qassertr.html">qassertr</a></code> for efficient checks
 of list elements and data frame columns.
 </p>
 
 
 <h3>Examples</h3>
 
-<pre><code class="r">
-# logical of length 1
-qcheck(NA, &quot;b1&quot;)
+<pre><code class="r"># logical of length 1
+qtest(NA, &quot;b1&quot;)
 </code></pre>
 
 <pre><code>## [1] TRUE
 </code></pre>
 
-<pre><code class="r">
-# logical of length 1, NA not allowed
-qcheck(NA, &quot;B1&quot;)
+<pre><code class="r"># logical of length 1, NA not allowed
+qtest(NA, &quot;B1&quot;)
 </code></pre>
 
 <pre><code>## [1] FALSE
 </code></pre>
 
-<pre><code class="r">
-# logical of length 0 or 1, NA not allowed
-qcheck(TRUE, &quot;B?&quot;)
+<pre><code class="r"># logical of length 0 or 1, NA not allowed
+qtest(TRUE, &quot;B?&quot;)
 </code></pre>
 
 <pre><code>## [1] TRUE
 </code></pre>
 
-<pre><code class="r">
-# numeric with length &gt; 0
-qcheck(runif(10), &quot;n+&quot;)
+<pre><code class="r"># numeric with length &gt; 0
+qtest(runif(10), &quot;n+&quot;)
 </code></pre>
 
 <pre><code>## [1] TRUE
 </code></pre>
 
-<pre><code class="r">
-# integer with length &gt; 0, NAs not allowed, all integers &gt;= 0 and &lt; Inf
-qcheck(1:3, &quot;I+[0,)&quot;)
+<pre><code class="r"># integer with length &gt; 0, NAs not allowed, all integers &gt;= 0 and &lt; Inf
+qtest(1:3, &quot;I+[0,)&quot;)
 </code></pre>
 
 <pre><code>## [1] TRUE
 </code></pre>
 
-<pre><code class="r">
-# either an emtpy list or a character vector with &lt;=5 elements
-qcheck(1, c(&quot;l0&quot;, &quot;s&lt;=5&quot;))
+<pre><code class="r"># either an emtpy list or a character vector with &lt;=5 elements
+qtest(1, c(&quot;l0&quot;, &quot;s&lt;=5&quot;))
 </code></pre>
 
 <pre><code>## [1] FALSE
 </code></pre>
 
 <pre><code class="r"># data frame with at least one column, no NA in any column
-qcheck(iris, &quot;D+&quot;)
+qtest(iris, &quot;D+&quot;)
 </code></pre>
 
 <pre><code>## [1] TRUE
-</code></pre>
-
-<pre><code class="r">
 </code></pre>
 
 

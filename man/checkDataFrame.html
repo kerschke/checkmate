@@ -24,15 +24,15 @@
 <pre>
 checkDataFrame(x, types = character(0L), any.missing = TRUE,
   min.rows = NULL, min.cols = NULL, nrows = NULL, ncols = NULL,
-  row.names = "any", col.names = "any")
+  row.names = NULL, col.names = NULL)
 
 assertDataFrame(x, types = character(0L), any.missing = TRUE,
   min.rows = NULL, min.cols = NULL, nrows = NULL, ncols = NULL,
-  row.names = "any", col.names = "any", .var.name)
+  row.names = NULL, col.names = NULL, .var.name)
 
 testDataFrame(x, types = character(0L), any.missing = TRUE,
   min.rows = NULL, min.cols = NULL, nrows = NULL, ncols = NULL,
-  row.names = "any", col.names = "any")
+  row.names = NULL, col.names = NULL)
 </pre>
 
 
@@ -52,7 +52,7 @@ the name using <code><a href="../../base/html/deparse.html">deparse</a></code> a
 </td></tr>
 <tr valign="top"><td><code>any.missing</code></td>
 <td>
-<p>[<code>integer(1)</code>]<br>
+<p>[<code>logical(1)</code>]<br>
 Are missing values allowed? Default is <code>TRUE</code>.</p>
 </td></tr>
 <tr valign="top"><td><code>min.rows</code></td>
@@ -77,13 +77,13 @@ Exact number of columns.</p>
 </td></tr>
 <tr valign="top"><td><code>row.names</code></td>
 <td>
-<p>[<code>logical(1)</code>]<br>
+<p>[<code>character(1)</code>]<br>
 Check for row names. Default is &ldquo;any&rdquo; (no check).
 See <code><a href="checkNamed.html">checkNamed</a></code> for possible values.</p>
 </td></tr>
 <tr valign="top"><td><code>col.names</code></td>
 <td>
-<p>[<code>logical(1)</code>]<br>
+<p>[<code>character(1)</code>]<br>
 Check for column names. Default is &ldquo;any&rdquo; (no check).
 See <code><a href="checkNamed.html">checkNamed</a></code> for possible values.</p>
 </td></tr>
@@ -109,7 +109,9 @@ a string with the error message.
 
 <h3>See Also</h3>
 
-<p>Other basetypes: <code><a href="checkCharacter.html">assertCharacter</a></code>,
+<p>Other basetypes: <code><a href="checkArray.html">assertArray</a></code>,
+<code><a href="checkArray.html">checkArray</a></code>, <code><a href="checkArray.html">testArray</a></code>;
+<code><a href="checkCharacter.html">assertCharacter</a></code>,
 <code><a href="checkCharacter.html">checkCharacter</a></code>,
 <code><a href="checkCharacter.html">testCharacter</a></code>; <code><a href="checkComplex.html">assertComplex</a></code>,
 <code><a href="checkComplex.html">checkComplex</a></code>, <code><a href="checkComplex.html">testComplex</a></code>;
@@ -136,8 +138,7 @@ a string with the error message.
 
 <h3>Examples</h3>
 
-<pre><code class="r">
-testDataFrame(iris, &quot;data.frame&quot;)
+<pre><code class="r">testDataFrame(iris, &quot;data.frame&quot;)
 </code></pre>
 
 <pre><code>## [1] FALSE
@@ -147,9 +148,6 @@ testDataFrame(iris, &quot;data.frame&quot;)
 </code></pre>
 
 <pre><code>## [1] FALSE
-</code></pre>
-
-<pre><code class="r">
 </code></pre>
 
 

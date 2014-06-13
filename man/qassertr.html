@@ -15,7 +15,7 @@
 
 <h3>Description</h3>
 
-<p>These functions are the tuned counterparts of <code><a href="qassert.html">qcheck</a></code> and
+<p>These functions are the tuned counterparts of <code><a href="qassert.html">qtest</a></code> and
 <code><a href="qassert.html">qassert</a></code> tailored for recursive checks of list
 elements or data frame columns.
 </p>
@@ -26,7 +26,7 @@ elements or data frame columns.
 <pre>
 qassertr(x, rules, .var.name)
 
-qcheckr(x, rules)
+qtestr(x, rules)
 </pre>
 
 
@@ -37,12 +37,12 @@ qcheckr(x, rules)
 <td>
 <p>[<code>list</code> or <code>data.frame</code>]<br>
 List or data frame to check for compliance with at least one of <code>rules</code>.
-See details of <code><a href="qassert.html">qcheck</a></code> for rule explanation.</p>
+See details of <code><a href="qassert.html">qtest</a></code> for rule explanation.</p>
 </td></tr>
 <tr valign="top"><td><code>rules</code></td>
 <td>
 <p>[<code>character</code>]<br>
-Set of rules. See <code><a href="qassert.html">qcheck</a></code></p>
+Set of rules. See <code><a href="qassert.html">qtest</a></code></p>
 </td></tr>
 <tr valign="top"><td><code>.var.name</code></td>
 <td>
@@ -61,26 +61,22 @@ the name of <code>x</code> will be retrieved via <code><a href="../../base/html/
 
 <h3>See Also</h3>
 
-<p><code><a href="qassert.html">qcheck</a></code>, <code><a href="qassert.html">qassert</a></code>
+<p><code><a href="qassert.html">qtest</a></code>, <code><a href="qassert.html">qassert</a></code>
 </p>
 
 
 <h3>Examples</h3>
 
-<pre><code class="r">
-qcheckr(as.list(1:10), &quot;i+&quot;)
+<pre><code class="r">qtestr(as.list(1:10), &quot;i+&quot;)
 </code></pre>
 
 <pre><code>## [1] TRUE
 </code></pre>
 
-<pre><code class="r">qcheck(iris, &quot;n&quot;)
+<pre><code class="r">qtestr(iris, &quot;n&quot;)
 </code></pre>
 
 <pre><code>## [1] FALSE
-</code></pre>
-
-<pre><code class="r">
 </code></pre>
 
 

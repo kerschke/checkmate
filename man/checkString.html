@@ -22,11 +22,11 @@
 <h3>Usage</h3>
 
 <pre>
-checkString(x, na.ok = FALSE, ...)
+checkString(x, na.ok = FALSE)
 
-assertString(x, na.ok = FALSE, ..., .var.name)
+assertString(x, na.ok = FALSE, .var.name)
 
-testString(x, na.ok = FALSE, ...)
+testString(x, na.ok = FALSE)
 </pre>
 
 
@@ -49,11 +49,6 @@ the name using <code><a href="../../base/html/deparse.html">deparse</a></code> a
 <p>[<code>logical(1)</code>]<br>
 Are missing values allowed? Default is <code>FALSE</code>.</p>
 </td></tr>
-<tr valign="top"><td><code>...</code></td>
-<td>
-<p>[ANY]<br>
-Additional parameters used in a call of <code><a href="checkCharacter.html">checkCharacter</a></code>.</p>
-</td></tr>
 </table>
 
 
@@ -75,10 +70,21 @@ a string with the error message.
 </p>
 
 
+<h3>See Also</h3>
+
+<p>Other scalars: <code><a href="checkCount.html">assertCount</a></code>,
+<code><a href="checkCount.html">checkCount</a></code>, <code><a href="checkCount.html">testCount</a></code>;
+<code><a href="checkFlag.html">assertFlag</a></code>, <code><a href="checkFlag.html">checkFlag</a></code>,
+<code><a href="checkFlag.html">testFlag</a></code>; <code><a href="checkInt.html">assertInt</a></code>,
+<code><a href="checkInt.html">checkInt</a></code>, <code><a href="checkInt.html">testInt</a></code>;
+<code><a href="checkNumber.html">assertNumber</a></code>, <code><a href="checkNumber.html">checkNumber</a></code>,
+<code><a href="checkNumber.html">testNumber</a></code>
+</p>
+
+
 <h3>Examples</h3>
 
-<pre><code class="r">
-testString(&quot;a&quot;)
+<pre><code class="r">testString(&quot;a&quot;)
 </code></pre>
 
 <pre><code>## [1] TRUE
@@ -88,9 +94,6 @@ testString(&quot;a&quot;)
 </code></pre>
 
 <pre><code>## [1] FALSE
-</code></pre>
-
-<pre><code class="r">
 </code></pre>
 
 

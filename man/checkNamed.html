@@ -50,7 +50,7 @@ the name using <code><a href="../../base/html/deparse.html">deparse</a></code> a
 Select the check(s) to perform.
 &ldquo;unnamed&rdquo; checks <code>x</code> to be unnamed.
 &ldquo;named&rdquo; (default) checks <code>x</code> to be named, this includes names to be not <code>NA</code> or emtpy (<code>""</code>).
-&ldquo;unique&rdquo; additionally tests for non-duplicated names and <code>strict</code> tests the names to comply to R's variable naming rules on top of &ldquo;unique&rdquo;.
+&ldquo;unique&rdquo; additionally tests for non-duplicated names.
 Note that for zero-length <code>x</code> every name check evalutes to <code>TRUE</code>.</p>
 </td></tr>
 </table>
@@ -68,8 +68,7 @@ a string with the error message.
 
 <h3>Examples</h3>
 
-<pre><code class="r">
-x = 1:3
+<pre><code class="r">x = 1:3
  testNamed(x, &quot;unnamed&quot;)
 </code></pre>
 
@@ -81,9 +80,6 @@ x = 1:3
 </code></pre>
 
 <pre><code>## [1] TRUE
-</code></pre>
-
-<pre><code class="r">
 </code></pre>
 
 
