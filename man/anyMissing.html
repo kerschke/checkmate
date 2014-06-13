@@ -50,6 +50,27 @@ elements of <code>x</code> are missing (see details), <code>FALSE</code> otherwi
 
 <h3>Examples</h3>
 
+<pre><code class="r">x = 1:2
+ allMissing(x)
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="r"> x[1] = NA
+ allMissing(x)
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
+<pre><code class="r"> x[2] = NA
+ allMissing(x)
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
 <pre><code class="r">anyMissing(c(1, NA))
 </code></pre>
 

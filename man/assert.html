@@ -2,6 +2,11 @@
 <html><head><title>R: Combine multiple checks to an assertion</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="R.css">
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head><body>
 
 <table width="100%" summary="page for assert {checkmate}"><tr><td>assert {checkmate}</td><td align="right">R Documentation</td></tr></table>
@@ -32,8 +37,8 @@ List of calls to check functions.</p>
 <tr valign="top"><td><code>.var.name</code></td>
 <td>
 <p>[character(1)]<br>
-Name for <code>x</code>. Defaults to a heuristic to determine
-the name.</p>
+Name for object to check. Defaults to a heuristic to determine
+the name of the first call.</p>
 </td></tr>
 </table>
 
@@ -43,6 +48,17 @@ the name.</p>
 <p>Throws an error if all checks failed and invisibly returns
 <code>TRUE</code> otherwise.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre><code class="r">x = 1:10
+ assert(checkNull(x), checkInteger(x, any.missing = FALSE))
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
 
 <hr><div align="center">[Package <em>checkmate</em> version 0.9 <a href="00Index.html">Index</a>]</div>
 </body></html>

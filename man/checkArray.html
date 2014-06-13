@@ -2,6 +2,11 @@
 <html><head><title>R: Check if an argument is an array</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="R.css">
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head><body>
 
 <table width="100%" summary="page for checkArray {checkmate}"><tr><td>checkArray {checkmate}</td><td align="right">R Documentation</td></tr></table>
@@ -98,6 +103,16 @@ a string with the error message.
 <code><a href="checkNumeric.html">testNumeric</a></code>; <code><a href="checkVector.html">assertVector</a></code>,
 <code><a href="checkVector.html">checkVector</a></code>, <code><a href="checkVector.html">testVector</a></code>
 </p>
+
+
+<h3>Examples</h3>
+
+<pre><code class="r">checkArray(array(1:27, dim = c(3, 3, 3)), d = 3)
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
 
 <hr><div align="center">[Package <em>checkmate</em> version 0.9 <a href="00Index.html">Index</a>]</div>
 </body></html>

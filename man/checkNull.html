@@ -2,6 +2,11 @@
 <html><head><title>R: Check if an argument is NULL</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="R.css">
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head><body>
 
 <table width="100%" summary="page for checkNull {checkmate}"><tr><td>checkNull {checkmate}</td><td align="right">R Documentation</td></tr></table>
@@ -18,6 +23,8 @@
 
 <pre>
 checkNull(x)
+
+assertNull(x, .var.name)
 
 testNull(x)
 </pre>
@@ -48,6 +55,22 @@ If the check is not successfull, <code>assertNull</code> throws an error message
 <code>testNull</code> returns <code>FALSE</code> and <code>checkNull</code> returns
 a string with the error message.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre><code class="r">testNull(NULL)
+</code></pre>
+
+<pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="r"> testNull(1)
+</code></pre>
+
+<pre><code>## [1] FALSE
+</code></pre>
+
 
 <hr><div align="center">[Package <em>checkmate</em> version 0.9 <a href="00Index.html">Index</a>]</div>
 </body></html>

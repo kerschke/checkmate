@@ -2,6 +2,11 @@
 <html><head><title>R: Convert an argument to an integer</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="R.css">
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head><body>
 
 <table width="100%" summary="page for asInteger {checkmate}"><tr><td>asInteger {checkmate}</td><td align="right">R Documentation</td></tr></table>
@@ -83,6 +88,28 @@ Upper value all elements of <code>x</code> must be lower than.</p>
 
 <p>Converted <code>x</code>.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre><code class="r">asInteger(c(1, 2, 3))
+</code></pre>
+
+<pre><code>## [1] 1 2 3
+</code></pre>
+
+<pre><code class="r"> asCount(1)
+</code></pre>
+
+<pre><code>## [1] 1
+</code></pre>
+
+<pre><code class="r"> asInt(1)
+</code></pre>
+
+<pre><code>## [1] 1
+</code></pre>
+
 
 <hr><div align="center">[Package <em>checkmate</em> version 0.9 <a href="00Index.html">Index</a>]</div>
 </body></html>
