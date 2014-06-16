@@ -22,11 +22,14 @@
 <h3>Usage</h3>
 
 <pre>
-checkCount(x, na.ok = FALSE, positive = FALSE)
+checkCount(x, na.ok = FALSE, positive = FALSE,
+  tol = .Machine$double.eps^0.5)
 
-assertCount(x, na.ok = FALSE, positive = FALSE, .var.name)
+assertCount(x, na.ok = FALSE, positive = FALSE,
+  tol = .Machine$double.eps^0.5, .var.name)
 
-testCount(x, na.ok = FALSE, positive = FALSE)
+testCount(x, na.ok = FALSE, positive = FALSE,
+  tol = .Machine$double.eps^0.5)
 </pre>
 
 
@@ -54,6 +57,12 @@ Are missing values allowed? Default is <code>FALSE</code>.</p>
 <p>[<code>logical(1)</code>]<br>
 Must <code>x</code> be positive (&gt;= 1)?
 Default is <code>FALSE</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>tol</code></td>
+<td>
+<p>[<code>double(1)</code>]<br>
+Numerical tolerance used to check whether a double or complex can be converted.
+Default is <code>sqrt(.Machine$double.eps)</code>.</p>
 </td></tr>
 </table>
 

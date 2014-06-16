@@ -22,11 +22,14 @@
 <h3>Usage</h3>
 
 <pre>
-checkInt(x, na.ok = FALSE, lower = -Inf, upper = Inf)
+checkInt(x, na.ok = FALSE, lower = -Inf, upper = Inf,
+  tol = .Machine$double.eps^0.5)
 
-assertInt(x, na.ok = FALSE, lower = -Inf, upper = Inf, .var.name)
+assertInt(x, na.ok = FALSE, lower = -Inf, upper = Inf,
+  tol = .Machine$double.eps^0.5, .var.name)
 
-testInt(x, na.ok = FALSE, lower = -Inf, upper = Inf)
+testInt(x, na.ok = FALSE, lower = -Inf, upper = Inf,
+  tol = .Machine$double.eps^0.5)
 </pre>
 
 
