@@ -46,9 +46,9 @@ the name using <code><a href="../../base/html/deparse.html">deparse</a></code> a
 </td></tr>
 <tr valign="top"><td><code>access</code></td>
 <td>
-<p>[<code>character</code>]<br>
-Single string with characters &lsquo;r&rsquo;, &lsquo;w&rsquo; and &lsquo;x&rsquo; to
-force a check for read, write or execute access rights.</p>
+<p>[<code>character(1)</code>]<br>
+Single string containing possible characters &lsquo;r&rsquo;, &lsquo;w&rsquo; and &lsquo;x&rsquo; to
+force a check for read, write and execute access rights, respectively.</p>
 </td></tr>
 </table>
 
@@ -56,8 +56,8 @@ force a check for read, write or execute access rights.</p>
 <h3>Value</h3>
 
 <p>Depending on the function prefix:
-If the check is successfull, all functions return <code>TRUE</code>.
-If the check is not successfull, <code>assertDirectory</code> throws an error message,
+If the check is successful, all functions return <code>TRUE</code>.
+If the check is not successful, <code>assertDirectory</code> throws an error message,
 <code>testDirectory</code> returns <code>FALSE</code> and <code>checkDirectory</code> returns
 a string with the error message.
 </p>
@@ -68,7 +68,10 @@ a string with the error message.
 <p>Other filesystem: <code><a href="checkAccess.html">assertAccess</a></code>,
 <code><a href="checkAccess.html">checkAccess</a></code>, <code><a href="checkAccess.html">testAccess</a></code>;
 <code><a href="checkFile.html">assertFile</a></code>, <code><a href="checkFile.html">checkFile</a></code>,
-<code><a href="checkFile.html">testFile</a></code>
+<code><a href="checkFile.html">testFile</a></code>;
+<code><a href="checkPathForOutput.html">assertPathForOutput</a></code>,
+<code><a href="checkPathForOutput.html">checkPathForOutput</a></code>,
+<code><a href="checkPathForOutput.html">testPathForOutput</a></code>
 </p>
 
 

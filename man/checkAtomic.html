@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>R: Check that an argument is a vector of type numeric</title>
+<html><head><title>R: Check that an argument is an atomic vector</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="R.css">
 
@@ -9,30 +9,28 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head><body>
 
-<table width="100%" summary="page for checkNumeric {checkmate}"><tr><td>checkNumeric {checkmate}</td><td align="right">R Documentation</td></tr></table>
+<table width="100%" summary="page for checkAtomic {checkmate}"><tr><td>checkAtomic {checkmate}</td><td align="right">R Documentation</td></tr></table>
 
-<h2>Check that an argument is a vector of type numeric</h2>
+<h2>Check that an argument is an atomic vector</h2>
 
 <h3>Description</h3>
 
-<p>Check that an argument is a vector of type numeric
+<p>Check that an argument is an atomic vector
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-checkNumeric(x, lower = -Inf, upper = Inf, any.missing = TRUE,
-  all.missing = TRUE, len = NULL, min.len = NULL, max.len = NULL,
-  unique = FALSE, names = NULL)
+checkAtomic(x, any.missing = TRUE, all.missing = TRUE, len = NULL,
+  min.len = NULL, max.len = NULL, unique = FALSE, names = NULL)
 
-assertNumeric(x, lower = -Inf, upper = Inf, any.missing = TRUE,
-  all.missing = TRUE, len = NULL, min.len = NULL, max.len = NULL,
-  unique = FALSE, names = NULL, .var.name)
+assertAtomic(x, any.missing = TRUE, all.missing = TRUE, len = NULL,
+  min.len = NULL, max.len = NULL, unique = FALSE, names = NULL,
+  .var.name)
 
-testNumeric(x, lower = -Inf, upper = Inf, any.missing = TRUE,
-  all.missing = TRUE, len = NULL, min.len = NULL, max.len = NULL,
-  unique = FALSE, names = NULL)
+testAtomic(x, any.missing = TRUE, all.missing = TRUE, len = NULL,
+  min.len = NULL, max.len = NULL, unique = FALSE, names = NULL)
 </pre>
 
 
@@ -49,16 +47,6 @@ Object to check.</p>
 <p>[character(1)]<br>
 Name for <code>x</code>. Defaults to a heuristic to determine
 the name using <code><a href="../../base/html/deparse.html">deparse</a></code> and <code><a href="../../base/html/substitute.html">substitute</a></code>.</p>
-</td></tr>
-<tr valign="top"><td><code>lower</code></td>
-<td>
-<p>[<code>numeric(1)</code>]<br>
-Lower value all elements of <code>x</code> must be greater than.</p>
-</td></tr>
-<tr valign="top"><td><code>upper</code></td>
-<td>
-<p>[<code>numeric(1)</code>]<br>
-Upper value all elements of <code>x</code> must be lower than.</p>
 </td></tr>
 <tr valign="top"><td><code>any.missing</code></td>
 <td>
@@ -99,20 +87,12 @@ Default is &ldquo;any&rdquo; which performs no check at all.</p>
 </table>
 
 
-<h3>Details</h3>
-
-<p>This function does not distinguish between
-<code>NA</code>, <code>NA_integer_</code>, <code>NA_real_</code>, <code>NA_complex_</code>
-and <code>NA_character_</code>.
-</p>
-
-
 <h3>Value</h3>
 
 <p>Depending on the function prefix:
 If the check is successful, all functions return <code>TRUE</code>.
-If the check is not successful, <code>assertNumeric</code> throws an error message,
-<code>testNumeric</code> returns <code>FALSE</code> and <code>checkNumeric</code> returns
+If the check is not successful, <code>assertAtmoic</code> throws an error message,
+<code>testAtmoic</code> returns <code>FALSE</code> and <code>checkAtmoic</code> returns
 a string with the error message.
 </p>
 
@@ -124,8 +104,7 @@ a string with the error message.
 <code><a href="checkAtomicVector.html">assertAtomicVector</a></code>,
 <code><a href="checkAtomicVector.html">checkAtomicVector</a></code>,
 <code><a href="checkAtomicVector.html">testAtomicVector</a></code>;
-<code><a href="checkAtomic.html">assertAtomic</a></code>, <code><a href="checkAtomic.html">checkAtomic</a></code>,
-<code><a href="checkAtomic.html">testAtomic</a></code>; <code><a href="checkCharacter.html">assertCharacter</a></code>,
+<code><a href="checkCharacter.html">assertCharacter</a></code>,
 <code><a href="checkCharacter.html">checkCharacter</a></code>,
 <code><a href="checkCharacter.html">testCharacter</a></code>; <code><a href="checkComplex.html">assertComplex</a></code>,
 <code><a href="checkComplex.html">checkComplex</a></code>, <code><a href="checkComplex.html">testComplex</a></code>;
@@ -147,20 +126,15 @@ a string with the error message.
 <code><a href="checkLogical.html">assertLogical</a></code>, <code><a href="checkLogical.html">checkLogical</a></code>,
 <code><a href="checkLogical.html">testLogical</a></code>; <code><a href="checkMatrix.html">assertMatrix</a></code>,
 <code><a href="checkMatrix.html">checkMatrix</a></code>, <code><a href="checkMatrix.html">testMatrix</a></code>;
-<code><a href="checkVector.html">assertVector</a></code>, <code><a href="checkVector.html">checkVector</a></code>,
-<code><a href="checkVector.html">testVector</a></code>
+<code><a href="checkNumeric.html">assertNumeric</a></code>, <code><a href="checkNumeric.html">checkNumeric</a></code>,
+<code><a href="checkNumeric.html">testNumeric</a></code>; <code><a href="checkVector.html">assertVector</a></code>,
+<code><a href="checkVector.html">checkVector</a></code>, <code><a href="checkVector.html">testVector</a></code>
 </p>
 
 
 <h3>Examples</h3>
 
-<pre><code class="r">testNumeric(1)
-</code></pre>
-
-<pre><code>## [1] TRUE
-</code></pre>
-
-<pre><code class="r"> testNumeric(1, min.len = 1, lower = 0)
+<pre><code class="r">testAtomic(letters, min.len = 1L, any.missing = FALSE)
 </code></pre>
 
 <pre><code>## [1] TRUE

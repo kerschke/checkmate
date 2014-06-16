@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>R: Check vector properties</title>
+<html><head><title>R: Check that an argument is a vector</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="R.css">
 
@@ -11,26 +11,28 @@
 
 <table width="100%" summary="page for checkVector {checkmate}"><tr><td>checkVector {checkmate}</td><td align="right">R Documentation</td></tr></table>
 
-<h2>Check vector properties</h2>
+<h2>Check that an argument is a vector</h2>
 
 <h3>Description</h3>
 
-<p>Check vector properties
+<p>The definition of a vector can be found in <code><a href="../../base/html/is.vector.html">is.vector</a></code>.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-checkVector(x, any.missing = TRUE, all.missing = TRUE, len = NULL,
-  min.len = NULL, max.len = NULL, unique = FALSE, names = NULL)
+checkVector(x, strict = FALSE, any.missing = TRUE, all.missing = TRUE,
+  len = NULL, min.len = NULL, max.len = NULL, unique = FALSE,
+  names = NULL)
 
-assertVector(x, any.missing = TRUE, all.missing = TRUE, len = NULL,
-  min.len = NULL, max.len = NULL, unique = FALSE, names = NULL,
-  .var.name)
+assertVector(x, strict = FALSE, any.missing = TRUE, all.missing = TRUE,
+  len = NULL, min.len = NULL, max.len = NULL, unique = FALSE,
+  names = NULL, .var.name)
 
-testVector(x, any.missing = TRUE, all.missing = TRUE, len = NULL,
-  min.len = NULL, max.len = NULL, unique = FALSE, names = NULL)
+testVector(x, strict = FALSE, any.missing = TRUE, all.missing = TRUE,
+  len = NULL, min.len = NULL, max.len = NULL, unique = FALSE,
+  names = NULL)
 </pre>
 
 
@@ -47,6 +49,12 @@ Object to check.</p>
 <p>[character(1)]<br>
 Name for <code>x</code>. Defaults to a heuristic to determine
 the name using <code><a href="../../base/html/deparse.html">deparse</a></code> and <code><a href="../../base/html/substitute.html">substitute</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>strict</code></td>
+<td>
+<p>[<code>logical(1)</code>]<br>
+May the vector have additional attributes or perform a strict check like in <code><a href="../../base/html/is.vector.html">is.vector</a></code>?
+Default is <code>FALSE</code> which allows e.g. <code>factor</code>s or <code>data.frame</code>s to be recognized as vectors.</p>
 </td></tr>
 <tr valign="top"><td><code>any.missing</code></td>
 <td>
@@ -90,8 +98,8 @@ Default is &ldquo;any&rdquo; which performs no check at all.</p>
 <h3>Value</h3>
 
 <p>Depending on the function prefix:
-If the check is successfull, all functions return <code>TRUE</code>.
-If the check is not successfull, <code>assertVector</code> throws an error message,
+If the check is successful, all functions return <code>TRUE</code>.
+If the check is not successful, <code>assertVector</code> throws an error message,
 <code>testVector</code> returns <code>FALSE</code> and <code>checkVector</code> returns
 a string with the error message.
 </p>
@@ -101,7 +109,11 @@ a string with the error message.
 
 <p>Other basetypes: <code><a href="checkArray.html">assertArray</a></code>,
 <code><a href="checkArray.html">checkArray</a></code>, <code><a href="checkArray.html">testArray</a></code>;
-<code><a href="checkCharacter.html">assertCharacter</a></code>,
+<code><a href="checkAtomicVector.html">assertAtomicVector</a></code>,
+<code><a href="checkAtomicVector.html">checkAtomicVector</a></code>,
+<code><a href="checkAtomicVector.html">testAtomicVector</a></code>;
+<code><a href="checkAtomic.html">assertAtomic</a></code>, <code><a href="checkAtomic.html">checkAtomic</a></code>,
+<code><a href="checkAtomic.html">testAtomic</a></code>; <code><a href="checkCharacter.html">assertCharacter</a></code>,
 <code><a href="checkCharacter.html">checkCharacter</a></code>,
 <code><a href="checkCharacter.html">testCharacter</a></code>; <code><a href="checkComplex.html">assertComplex</a></code>,
 <code><a href="checkComplex.html">checkComplex</a></code>, <code><a href="checkComplex.html">testComplex</a></code>;

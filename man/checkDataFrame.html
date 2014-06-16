@@ -91,8 +91,12 @@ See <code><a href="checkNamed.html">checkNamed</a></code> for possible values.</
 <td>
 <p>[<code>character</code>]<br>
 Character vector of class names. Each list element must inherit
-Defaults to <code>character(0)</code> (no check).
-from at least one of the provided types.</p>
+from at least one of the provided types.
+The types &ldquo;logical&rdquo;, &ldquo;integer&rdquo;, &ldquo;integerish&rdquo;, &ldquo;double&rdquo;,
+&ldquo;numeric&rdquo;, &ldquo;complex&rdquo;, &ldquo;character&rdquo;, &ldquo;factor&rdquo;, &ldquo;atomic&rdquo;, &ldquo;vector&rdquo;
+&ldquo;atomicvector&rdquo;, &ldquo;array&rdquo;, &ldquo;matrix&rdquo;, &ldquo;list&rdquo; and &ldquo;null&rdquo; are supported.
+For other types <code><a href="../../base/html/inherits.html">inherits</a></code> is used to check <code>x</code>'s inheritance.
+Defaults to <code>character(0)</code> (no check).</p>
 </td></tr>
 </table>
 
@@ -100,8 +104,8 @@ from at least one of the provided types.</p>
 <h3>Value</h3>
 
 <p>Depending on the function prefix:
-If the check is successfull, all functions return <code>TRUE</code>.
-If the check is not successfull, <code>assertDataFrame</code> throws an error message,
+If the check is successful, all functions return <code>TRUE</code>.
+If the check is not successful, <code>assertDataFrame</code> throws an error message,
 <code>testDataFrame</code> returns <code>FALSE</code> and <code>checkDataFrame</code> returns
 a string with the error message.
 </p>
@@ -111,7 +115,11 @@ a string with the error message.
 
 <p>Other basetypes: <code><a href="checkArray.html">assertArray</a></code>,
 <code><a href="checkArray.html">checkArray</a></code>, <code><a href="checkArray.html">testArray</a></code>;
-<code><a href="checkCharacter.html">assertCharacter</a></code>,
+<code><a href="checkAtomicVector.html">assertAtomicVector</a></code>,
+<code><a href="checkAtomicVector.html">checkAtomicVector</a></code>,
+<code><a href="checkAtomicVector.html">testAtomicVector</a></code>;
+<code><a href="checkAtomic.html">assertAtomic</a></code>, <code><a href="checkAtomic.html">checkAtomic</a></code>,
+<code><a href="checkAtomic.html">testAtomic</a></code>; <code><a href="checkCharacter.html">assertCharacter</a></code>,
 <code><a href="checkCharacter.html">checkCharacter</a></code>,
 <code><a href="checkCharacter.html">testCharacter</a></code>; <code><a href="checkComplex.html">assertComplex</a></code>,
 <code><a href="checkComplex.html">checkComplex</a></code>, <code><a href="checkComplex.html">testComplex</a></code>;
