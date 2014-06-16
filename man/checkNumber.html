@@ -22,11 +22,12 @@
 <h3>Usage</h3>
 
 <pre>
-checkNumber(x, na.ok = FALSE, lower = -Inf, upper = Inf)
+checkNumber(x, na.ok = FALSE, lower = -Inf, upper = Inf, finite = FALSE)
 
-assertNumber(x, na.ok = FALSE, lower = -Inf, upper = Inf, .var.name)
+assertNumber(x, na.ok = FALSE, lower = -Inf, upper = Inf,
+  finite = FALSE, .var.name)
 
-testNumber(x, na.ok = FALSE, lower = -Inf, upper = Inf)
+testNumber(x, na.ok = FALSE, lower = -Inf, upper = Inf, finite = FALSE)
 </pre>
 
 
@@ -58,6 +59,11 @@ Lower value all elements of <code>x</code> must be greater than.</p>
 <td>
 <p>[<code>numeric(1)</code>]<br>
 Upper value all elements of <code>x</code> must be lower than.</p>
+</td></tr>
+<tr valign="top"><td><code>finite</code></td>
+<td>
+<p>[<code>logical(1)</code>]<br>
+Check for only finite values? Default is <code>FALSE</code>.</p>
 </td></tr>
 </table>
 

@@ -22,17 +22,17 @@
 <h3>Usage</h3>
 
 <pre>
-checkNumeric(x, lower = -Inf, upper = Inf, any.missing = TRUE,
-  all.missing = TRUE, len = NULL, min.len = NULL, max.len = NULL,
-  unique = FALSE, names = NULL)
+checkNumeric(x, lower = -Inf, upper = Inf, finite = FALSE,
+  any.missing = TRUE, all.missing = TRUE, len = NULL, min.len = NULL,
+  max.len = NULL, unique = FALSE, names = NULL)
 
-assertNumeric(x, lower = -Inf, upper = Inf, any.missing = TRUE,
-  all.missing = TRUE, len = NULL, min.len = NULL, max.len = NULL,
-  unique = FALSE, names = NULL, .var.name)
+assertNumeric(x, lower = -Inf, upper = Inf, finite = FALSE,
+  any.missing = TRUE, all.missing = TRUE, len = NULL, min.len = NULL,
+  max.len = NULL, unique = FALSE, names = NULL, .var.name)
 
-testNumeric(x, lower = -Inf, upper = Inf, any.missing = TRUE,
-  all.missing = TRUE, len = NULL, min.len = NULL, max.len = NULL,
-  unique = FALSE, names = NULL)
+testNumeric(x, lower = -Inf, upper = Inf, finite = FALSE,
+  any.missing = TRUE, all.missing = TRUE, len = NULL, min.len = NULL,
+  max.len = NULL, unique = FALSE, names = NULL)
 </pre>
 
 
@@ -59,6 +59,11 @@ Lower value all elements of <code>x</code> must be greater than.</p>
 <td>
 <p>[<code>numeric(1)</code>]<br>
 Upper value all elements of <code>x</code> must be lower than.</p>
+</td></tr>
+<tr valign="top"><td><code>finite</code></td>
+<td>
+<p>[<code>logical(1)</code>]<br>
+Check for only finite values? Default is <code>FALSE</code>.</p>
 </td></tr>
 <tr valign="top"><td><code>any.missing</code></td>
 <td>
