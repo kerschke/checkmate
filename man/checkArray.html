@@ -22,11 +22,11 @@
 <h3>Usage</h3>
 
 <pre>
-checkArray(x, mode = "any", any.missing = TRUE, d = NULL)
+checkArray(x, mode = NULL, any.missing = TRUE, d = NULL)
 
-assertArray(x, mode = "any", any.missing = TRUE, d = NULL, .var.name)
+assertArray(x, mode = NULL, any.missing = TRUE, d = NULL, .var.name)
 
-testArray(x, mode = "any", any.missing = TRUE, d = NULL)
+testArray(x, mode = NULL, any.missing = TRUE, d = NULL)
 </pre>
 
 
@@ -48,9 +48,8 @@ the name using <code><a href="../../base/html/deparse.html">deparse</a></code> a
 <td>
 <p>[<code>character(1)</code>]<br>
 Storage mode of the matrix. Matricies can hold &ldquo;logical&rdquo;,
-&ldquo;integer&rdquo;, &ldquo;double&rdquo;, &ldquo;complex&rdquo; and
-&ldquo;character&rdquo;. &ldquo;numeric&rdquo; is also supported by this
-function. Default is &ldquo;any&rdquo;.</p>
+&ldquo;integer&rdquo;, &ldquo;double&rdquo;, &ldquo;numeric&rdquo;, &ldquo;complex&rdquo; and
+&ldquo;character&rdquo;. Default is <code>NULL</code> (no check).</p>
 </td></tr>
 <tr valign="top"><td><code>any.missing</code></td>
 <td>

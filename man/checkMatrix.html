@@ -22,15 +22,15 @@
 <h3>Usage</h3>
 
 <pre>
-checkMatrix(x, mode = "any", any.missing = TRUE, min.rows = NULL,
+checkMatrix(x, mode = NULL, any.missing = TRUE, min.rows = NULL,
   min.cols = NULL, nrows = NULL, ncols = NULL, row.names = NULL,
   col.names = NULL)
 
-assertMatrix(x, mode = "any", any.missing = TRUE, min.rows = NULL,
+assertMatrix(x, mode = NULL, any.missing = TRUE, min.rows = NULL,
   min.cols = NULL, nrows = NULL, ncols = NULL, row.names = NULL,
   col.names = NULL, .var.name)
 
-testMatrix(x, mode = "any", any.missing = TRUE, min.rows = NULL,
+testMatrix(x, mode = NULL, any.missing = TRUE, min.rows = NULL,
   min.cols = NULL, nrows = NULL, ncols = NULL, row.names = NULL,
   col.names = NULL)
 </pre>
@@ -55,7 +55,7 @@ the name using <code><a href="../../base/html/deparse.html">deparse</a></code> a
 <p>[<code>character(1)</code>]<br>
 Storage mode of the matrix. Matricies can hold &ldquo;logical&rdquo;,
 &ldquo;integer&rdquo;, &ldquo;double&rdquo;, &ldquo;numeric&rdquo;, &ldquo;complex&rdquo; and
-&ldquo;character&rdquo;. Default is &ldquo;any&rdquo;.</p>
+&ldquo;character&rdquo;. Default is <code>NULL</code> (no check).</p>
 </td></tr>
 <tr valign="top"><td><code>any.missing</code></td>
 <td>
