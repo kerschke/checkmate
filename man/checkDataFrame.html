@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>R: Check if an argument is a 'data.frame'</title>
+<html><head><title>R: Check if an argument is a data frame</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="R.css">
 
@@ -11,11 +11,11 @@
 
 <table width="100%" summary="page for checkDataFrame {checkmate}"><tr><td>checkDataFrame {checkmate}</td><td align="right">R Documentation</td></tr></table>
 
-<h2>Check if an argument is a <code>data.frame</code></h2>
+<h2>Check if an argument is a data frame</h2>
 
 <h3>Description</h3>
 
-<p>Check if an argument is a <code>data.frame</code>
+<p>Check if an argument is a data frame
 </p>
 
 
@@ -78,13 +78,13 @@ Exact number of columns.</p>
 <tr valign="top"><td><code>row.names</code></td>
 <td>
 <p>[<code>character(1)</code>]<br>
-Check for row names. Default is &ldquo;any&rdquo; (no check).
+Check for row names. Default is &ldquo;NULL&rdquo; (no check).
 See <code><a href="checkNamed.html">checkNamed</a></code> for possible values.</p>
 </td></tr>
 <tr valign="top"><td><code>col.names</code></td>
 <td>
 <p>[<code>character(1)</code>]<br>
-Check for column names. Default is &ldquo;any&rdquo; (no check).
+Check for column names. Default is &ldquo;NULL&rdquo; (no check).
 See <code><a href="checkNamed.html">checkNamed</a></code> for possible values.</p>
 </td></tr>
 <tr valign="top"><td><code>types</code></td>
@@ -95,7 +95,7 @@ from at least one of the provided types.
 The types &ldquo;logical&rdquo;, &ldquo;integer&rdquo;, &ldquo;integerish&rdquo;, &ldquo;double&rdquo;,
 &ldquo;numeric&rdquo;, &ldquo;complex&rdquo;, &ldquo;character&rdquo;, &ldquo;factor&rdquo;, &ldquo;atomic&rdquo;, &ldquo;vector&rdquo;
 &ldquo;atomicvector&rdquo;, &ldquo;array&rdquo;, &ldquo;matrix&rdquo;, &ldquo;list&rdquo; and &ldquo;null&rdquo; are supported.
-For other types <code><a href="../../base/html/inherits.html">inherits</a></code> is used to check <code>x</code>'s inheritance.
+For other types <code><a href="../../base/html/inherits.html">inherits</a></code> is used as a fallback to check <code>x</code>'s inheritance.
 Defaults to <code>character(0)</code> (no check).</p>
 </td></tr>
 </table>
@@ -159,5 +159,5 @@ a string with the error message.
 </code></pre>
 
 
-<hr><div align="center">[Package <em>checkmate</em> version 0.9 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>checkmate</em> version 1.0 <a href="00Index.html">Index</a>]</div>
 </body></html>

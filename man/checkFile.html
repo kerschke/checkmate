@@ -48,7 +48,7 @@ the name using <code><a href="../../base/html/deparse.html">deparse</a></code> a
 <td>
 <p>[<code>character(1)</code>]<br>
 Single string containing possible characters &lsquo;r&rsquo;, &lsquo;w&rsquo; and &lsquo;x&rsquo; to
-force a check for read, write and execute access rights, respectively.</p>
+force a check for read, write or execute access rights, respectively.</p>
 </td></tr>
 </table>
 
@@ -85,13 +85,13 @@ a string with the error message.
 <pre><code>## [1] TRUE
 </code></pre>
 
-<pre><code class="r"> # Check if R&#39;s COPYING file is writable
- testFile(file.path(R.home(), &quot;COPYING&quot;), access = &quot;w&quot;)
+<pre><code class="r"> # Check if R&#39;s COPYING file is readable and writable
+ testFile(file.path(R.home(), &quot;COPYING&quot;), access = &quot;rw&quot;)
 </code></pre>
 
 <pre><code>## [1] FALSE
 </code></pre>
 
 
-<hr><div align="center">[Package <em>checkmate</em> version 0.9 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>checkmate</em> version 1.0 <a href="00Index.html">Index</a>]</div>
 </body></html>
