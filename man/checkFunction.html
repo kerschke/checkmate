@@ -47,7 +47,9 @@ the name using <code><a href="../../base/html/deparse.html">deparse</a></code> a
 <tr valign="top"><td><code>args</code></td>
 <td>
 <p>[<code>character</code>]<br>
-Expected formal arguments.</p>
+Expected formal arguments. Checks that a function has no arguments if
+set to <code>character(0)</code>.
+Default is <code>NULL</code> (no check).</p>
 </td></tr>
 <tr valign="top"><td><code>ordered</code></td>
 <td>
@@ -118,5 +120,5 @@ a string with the error message.
 </code></pre>
 
 
-<hr><div align="center">[Package <em>checkmate</em> version 1.0 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>checkmate</em> version 1.2 <a href="00Index.html">Index</a>]</div>
 </body></html>

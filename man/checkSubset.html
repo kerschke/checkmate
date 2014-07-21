@@ -22,11 +22,11 @@
 <h3>Usage</h3>
 
 <pre>
-checkSubset(x, choices)
+checkSubset(x, choices, empty.ok = TRUE)
 
-assertSubset(x, choices, .var.name)
+assertSubset(x, choices, empty.ok = TRUE, .var.name)
 
-testSubset(x, choices)
+testSubset(x, choices, empty.ok = TRUE)
 </pre>
 
 
@@ -49,6 +49,12 @@ the name using <code><a href="../../base/html/deparse.html">deparse</a></code> a
 <p>[<code>atomic</code>]<br>
 Set of possible values.</p>
 </td></tr>
+<tr valign="top"><td><code>empty.ok</code></td>
+<td>
+<p>[<code>logical(1)</code>]<br>
+Treat zero-length <code>x</code> as subset of any set <code>choices</code>?
+Default is <code>TRUE</code>.</p>
+</td></tr>
 </table>
 
 
@@ -65,7 +71,9 @@ a string with the error message.
 <h3>See Also</h3>
 
 <p>Other set: <code><a href="checkChoice.html">assertChoice</a></code>,
-<code><a href="checkChoice.html">checkChoice</a></code>, <code><a href="checkChoice.html">testChoice</a></code>
+<code><a href="checkChoice.html">checkChoice</a></code>, <code><a href="checkChoice.html">testChoice</a></code>;
+<code><a href="checkSetEqual.html">assertSetEqual</a></code>,
+<code><a href="checkSetEqual.html">checkSetEqual</a></code>, <code><a href="checkSetEqual.html">testSetEqual</a></code>
 </p>
 
 
@@ -84,5 +92,5 @@ a string with the error message.
 </code></pre>
 
 
-<hr><div align="center">[Package <em>checkmate</em> version 1.0 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>checkmate</em> version 1.2 <a href="00Index.html">Index</a>]</div>
 </body></html>

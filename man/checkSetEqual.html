@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>R: Check if an object is an element of a given set</title>
+<html><head><title>R: Check if object is a subset of a given set</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="R.css">
 
@@ -9,24 +9,24 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head><body>
 
-<table width="100%" summary="page for checkChoice {checkmate}"><tr><td>checkChoice {checkmate}</td><td align="right">R Documentation</td></tr></table>
+<table width="100%" summary="page for checkSetEqual {checkmate}"><tr><td>checkSetEqual {checkmate}</td><td align="right">R Documentation</td></tr></table>
 
-<h2>Check if an object is an element of a given set</h2>
+<h2>Check if object is a subset of a given set</h2>
 
 <h3>Description</h3>
 
-<p>Check if an object is an element of a given set
+<p>Check if object is a subset of a given set
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-checkChoice(x, choices)
+checkSetEqual(x, y)
 
-assertChoice(x, choices, .var.name)
+assertSetEqual(x, y, .var.name)
 
-testChoice(x, choices)
+testSetEqual(x, y)
 </pre>
 
 
@@ -44,10 +44,10 @@ Object to check.</p>
 Name for <code>x</code>. Defaults to a heuristic to determine
 the name using <code><a href="../../base/html/deparse.html">deparse</a></code> and <code><a href="../../base/html/substitute.html">substitute</a></code>.</p>
 </td></tr>
-<tr valign="top"><td><code>choices</code></td>
+<tr valign="top"><td><code>y</code></td>
 <td>
 <p>[<code>atomic</code>]<br>
-Set of possible values.</p>
+Set to compare with.</p>
 </td></tr>
 </table>
 
@@ -56,16 +56,16 @@ Set of possible values.</p>
 
 <p>Depending on the function prefix:
 If the check is successful, all functions return <code>TRUE</code>.
-If the check is not successful, <code>assertChoice</code> throws an error message,
-<code>testChoice</code> returns <code>FALSE</code> and <code>checkChoice</code> returns
+If the check is not successful, <code>assertSubset</code> throws an error message,
+<code>testSubset</code> returns <code>FALSE</code> and <code>checkSubset</code> returns
 a string with the error message.
 </p>
 
 
 <h3>See Also</h3>
 
-<p>Other set: <code><a href="checkSetEqual.html">assertSetEqual</a></code>,
-<code><a href="checkSetEqual.html">checkSetEqual</a></code>, <code><a href="checkSetEqual.html">testSetEqual</a></code>;
+<p>Other set: <code><a href="checkChoice.html">assertChoice</a></code>,
+<code><a href="checkChoice.html">checkChoice</a></code>, <code><a href="checkChoice.html">testChoice</a></code>;
 <code><a href="checkSubset.html">assertSubset</a></code>, <code><a href="checkSubset.html">checkSubset</a></code>,
 <code><a href="checkSubset.html">testSubset</a></code>
 </p>
@@ -73,10 +73,16 @@ a string with the error message.
 
 <h3>Examples</h3>
 
-<pre><code class="r">testChoice(&quot;x&quot;, letters)
+<pre><code class="r">testSetEqual(c(&quot;a&quot;, &quot;b&quot;), c(&quot;a&quot;, &quot;b&quot;))
 </code></pre>
 
 <pre><code>## [1] TRUE
+</code></pre>
+
+<pre><code class="r"> testSetEqual(1:3, 1:4)
+</code></pre>
+
+<pre><code>## [1] FALSE
 </code></pre>
 
 
